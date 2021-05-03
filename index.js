@@ -1,17 +1,21 @@
 import "dotenv/config";
 import express from "express";
+import models from "./models";
+import routes from "./routes";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/rocks", (req, res) => {
-  return res.send("Received a GET HTTP method on rocks index");
+app.use((req, res, next) => {
+  req.db = {
+    models,
+  };
+  next();
 });
-app.get("/rocks/:id", (req, res) => {
-  return res.send("Received a GET HTTP method on rocks show");
-});
+
+app.use("/rocks", routes.rock);
 
 app.listen(process.env.PORT, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
