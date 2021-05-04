@@ -19,5 +19,5 @@ app.use((req, res, next) => {
 app.use("/rocks", routes.rock);
 
 app.listen(process.env.PORT, () =>
-  console.log(`Example app listening on port ${process.env.PORT}!`)
+  console.log(`Listening on port ${process.env.PORT}!`)
 );
