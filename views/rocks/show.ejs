@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs'); %>
+
+<div class="card" style="width: 25rem">
+  <img src="<%=rock.img%>" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title"><%=rock.name%></h5>
+    <p class="card-text"><%=rock.description%></p>
+    <a href="/rocks" class="btn btn-primary">Go back</a>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs'); %>
