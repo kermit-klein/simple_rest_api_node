@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs'); %>
+
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-lg-5">
+        <h6 class="text-muted">List of Rocks</h6> 
+        <ul class="list-group">
+<%  rocks.forEach((rock)=>{  %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= rock.name%>
+        <div class="image-parent">
+            <a href="/rocks/<%=rock.id%>"><img src="<%=rock.img%>" class="img-fluid" alt="lay"></a>
+      </li>
+ <%   }) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<%- include('../partials/footer.ejs');
+%>
